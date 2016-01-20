@@ -10,11 +10,15 @@
 // (There are also optimizations that will allow you to skip a lot of the dead search space)
 // take a look at solversSpec.js to see what the tests are expecting
 
+// create all possible combinations of n queens on a board of nxn
+var makeAllBoards = function (n){
+  var emptyBoard = new Board({'n': n});
+}
 
 // return a matrix (an array of arrays) representing a single nxn chessboard, with n rooks placed such that none of them can attack each other
-
 window.findNRooksSolution = function(n) {
-  var solution = undefined; //fixme
+  var solution = undefined; // solution will be an array of arrays that we pass to new Board
+  
 
   console.log('Single solution for ' + n + ' rooks:', JSON.stringify(solution));
   return solution;
