@@ -156,40 +156,29 @@
     //
     // test if a specific minor diagonal on this board contains a conflict
     hasMinorDiagonalConflictAt: function(minorDiagonalColumnIndexAtFirstRow) {
+      var queens = 0;
+      var rowIndex = minorDiagonalColumnIndexAtFirstRow < this.get('n') ? 0 : minorDiagonalColumnIndexAtFirstRow - this.get('n') + 1;
+      var columnIndex = minorDiagonalColumnIndexAtFirstRow < this.get('n') ? minorDiagonalColumnIndexAtFirstRow : this.get('n') - 1;
+
+      while (rowIndex < this.get('n') && columnIndex >= 0){
+        queens += this.get(rowIndex)[columnIndex];
+        rowIndex++;
+        columnIndex--;
+      }
+      return queens > 1  ? true : false; 
+      
       return false;
     },
 
     // test if any minor diagonals on this board contain conflicts
     hasAnyMinorDiagonalConflicts: function() {
-      
-      
-      // // loop through all positions in top row
-      // for (var i = this.get('n')-1; i > 0; i--) {
-      //   var queens = this.get(0)[i];
-      //   // loop through spaces to be checked
-      //   for (var j = i - 1; j >= 0; j--) {
-      //     queens += this.get(i-j)[j];
-      //   }
-      //   if (queens > 1) {
-      //     return true;
-      //   }
-      // }
-      
-      // // loop through all positions in first col, after first space
-      // for (var i = this.get('n')-2; i > 0; i--) {
-      //   var queens = this.get(i)[this.get('n')-1];
-      //   // loop through spaces to be checked
-      //   for (var j = i +1; j < this.get('n'); j++) {
-      //     queens += this.get(j)[j-i];
-      //   }
-        
-      //   if (queens > 1) {
-      //     return true;
-      //   }
-      // }
-  
-      return false; 
-    }
+      for (var i = 1; i < 2 * this.get('n') - 2; i++){
+        if (this.hasMinorDiagonalConflictAt(i)){
+          return true;
+        }
+      }
+      return false;
+      }
 
     /*--------------------  End of Helper Functions  ---------------------*/
 
