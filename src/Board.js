@@ -127,12 +127,25 @@
     //
     // test if a specific major diagonal on this board contains a conflict
     hasMajorDiagonalConflictAt: function(majorDiagonalColumnIndexAtFirstRow) {
-      return false; // fixme
+      // create col and row variables
+      // loop through all positions in top row
+      for (var i = 0; i < this.get('n')-1; i++) {
+        // loop through spaces to be checked
+        for (var j = i + 1; j < this.get('n'); j++)
+      }
+      
+      // loop through all positions in first col, after first space
+      for (var i = 1; i < this.get('n')-1; i++) {
+        // loop through spaces to be checked
+        
+      }
+      
+      return false; 
     },
 
     // test if any major diagonals on this board contain conflicts
     hasAnyMajorDiagonalConflicts: function() {
-      return false; // fixme
+      return false; 
     },
 
 
