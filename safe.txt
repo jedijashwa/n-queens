@@ -17,7 +17,8 @@ when queen = 0
 queen.col < queens.length
 
 
-
+[[0, 0],
+[0, 0]]
 
 
 

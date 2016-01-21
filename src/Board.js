@@ -131,7 +131,7 @@
       var rowIndex = majorDiagonalColumnIndexAtFirstRow < 0 ? Math.abs(majorDiagonalColumnIndexAtFirstRow) : 0;
       var columnIndex = majorDiagonalColumnIndexAtFirstRow < 0 ? 0 : majorDiagonalColumnIndexAtFirstRow;
 
-      while (rowIndex < this.get('n')-1 && columnIndex < this.get('n')-1){
+      while (rowIndex < this.get('n') && columnIndex < this.get('n')){
         queens += this.get(rowIndex)[columnIndex];
         rowIndex++;
         columnIndex++;
