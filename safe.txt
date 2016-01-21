@@ -1,3 +1,32 @@
+
+queen.col > queen[queen.id - 1].col + 1 || queen.col < queen
+
+var moveQueens = function (queen) {
+  if (queen.row === 0) {
+    return (queen.col < queens.length);
+  } else {
+    return (queen.col !== queens[queen.row - 1].col);
+  }
+}
+
+(queen.row === 0 && queen.col < queen.length) || queen.col !== queens[queen.row - 1].col
+when queen > 0
+queen.col !== queens[queen.row - 1].col
+
+when queen = 0
+queen.col < queens.length
+
+
+
+
+
+
+
+
+
+
+
+=========================================================================
 var makeAllBoards = function (n) {
   return arrayAllBoards;
 }
