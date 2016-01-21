@@ -13,7 +13,7 @@
 // create all possible combinations of n queens on a board of nxn
 var makeAllBoards = function (n){
   var boards = [];
-  
+  getAllBoards(queens[0], 0, 0);
   return boards;
 }
 
