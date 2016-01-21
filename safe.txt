@@ -8,5 +8,104 @@ var makeAllBoards = function (n) {
   1: [0,0,1,0,0],
   2: [0,0,0,0,1],
 }
+//You exit out of the loop when that queen's index equals it's columnIndex AND it's rowIndex = n-1
 
+
+  
+}
+
+for (q0row = )
+for (q0col)
+
+Queen {
+  id: 0 -> n - 1,
+  value: 1,
+  rowIndex: 0,
+  columnIndex: id
+}
+
+
+Queen {
+  id: 4,
+  value: 1,
+  rowIndex: 0,
+  columnIndex: 4
+}
+
+================================
+while (rowIndex !== n-1 && columnIndex !== queen.id){
+
+Queen4.columnIndex++
+
+if (cIndex == n) {
+  cIndex == 0;
+  rIndex++;
+}
+
+var save = new Board({'n': n});
+for (i = 0; i < queens.length; i++) (
+  save.toggle(queens[i].row, queens[i].col)
+)
+board.push(save)
+
+===================================
+//create new queen with id, row, col
+var Queen = function(id, row, column){
+  this.id = id;
+  this.row = row;
+  this.column = column;
+};
+
+// declare empty array queens
+var queens = [];
+
+// loop n times
+for (var i = 0; i <= n; i++)
+  // push new queens to queens array
+  queens.push(new Queen(i, 0, i));
+}
+
+
+// recursive function to store a possible board and move queens
+// accepts queen, row, col;
+var recurse = function(queen, row, col){
+  // store new location to queen
+  // if column doesn't exist, move to next row and column 0;
+  if (col === n) {
+    queen.col === 0;
+    queen.row++;
+  } else {
+    // otherwise save row and column that were passed in
+    queen.row = row;
+    queen.col = col;
+  }  
+  // if it's the final queen, save each time its passed in
+  if (queen.id = n-1){
+    var save = new Board({'n': n});
+    for (i = 0; i < queens.length; i++) {
+      save.toggle(queens[i].row, queens[i].col)
+    }
+  }
+
+  };
+  recurse(queen, row, col++)
+
+ }; 
+  // base cases that have more conditions
+  // row == n -1 && queen.id == col
+  
+  
+
+
+
+  if (queen.id < queens.length){
+    recurse(queens[queen.id+1], row, col++);
+  }
+  if(row == n -1 && queen.id == col) {
+    
+    base case;
+  } else {
+    recurse(queen, row, col++)
+  }
+}
 

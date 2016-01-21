@@ -13,6 +13,8 @@
 // create all possible combinations of n queens on a board of nxn
 var makeAllBoards = function (n){
   var emptyBoard = new Board({'n': n});
+  
+  
 }
 
 // return a matrix (an array of arrays) representing a single nxn chessboard, with n rooks placed such that none of them can attack each other
