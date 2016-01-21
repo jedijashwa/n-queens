@@ -49,7 +49,7 @@ for (i = 0; i < queens.length; i++) (
 board.push(save)
 
 ===================================
-//create new queen with id, row, col
+//create new queen with id
 var Queen = function(id){
   this.id = id;
 };
@@ -85,13 +85,13 @@ var getAllBoards = function(queen, row, col){
   if (queen.id === queens.length-1){
     var save = new Board({'n': queens.length});
     for (i = 0; i < queens.length; i++) {
-      save.toggle(queens[i].row, queens[i].col)
+      save.togglePiece(queens[i].row, queens[i].col)
     }
     boards.push(save);
   } else {
     getAllBoards(queens[queen.id + 1], queen.row, queen.col + 1);
   }
-  }
+  
   // if not base case
   // if last queen
   
@@ -100,7 +100,7 @@ var getAllBoards = function(queen, row, col){
     // move the closet thing not at it's base case
     for (var i = queen.id - 1; i >= -1; i--){
       if (i === -1){
-        return; ////escape somehow
+        return;
       }
       if (!(queens[i].row == n - 1 && queens[i].col == queens[i].id)) {
         getAllBoards(queens[i], queens[i].row, queens[i].col + 1);
