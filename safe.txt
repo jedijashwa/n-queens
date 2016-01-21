@@ -69,6 +69,7 @@ for (var i = 0; i <= n; i++)
 // recursive function to store a possible board and move queens
 // accepts queen, row, col;
 var recurse = function(queen, row, col){
+  // if id = 0; col; 
   // store new location to queen
   // if column doesn't exist, move to next row and column 0;
   if (col === n) {
@@ -79,16 +80,42 @@ var recurse = function(queen, row, col){
     queen.row = row;
     queen.col = col;
   }  
+  
   // if it's the final queen, save each time its passed in
   if (queen.id = n-1){
     var save = new Board({'n': n});
     for (i = 0; i < queens.length; i++) {
       save.toggle(queens[i].row, queens[i].col)
     }
+    boards.push(save);
   }
-
-  };
-  recurse(queen, row, col++)
+  // not last queen
+  if (queen.id < queens.length - 1) {
+    recurse(queens[queen.id +1], queen.row++, queen.column++);
+  }
+  // if not base case
+  // if last queen
+  
+  //base case================
+  if (queen.row == n - 1 && queen.col == queen.id){
+    // move the closet thing not at it's base case
+    for (i = queen.id - 1; i >= -1; i--){
+      if (i === -1){
+        return; ////escape somehow
+      }
+      if (!(queens[i].row == n - 1 && queens[i].col == queens[i].id)) {
+        recurse(queens[queen.id - 1], queens[queen.id - 1].row, queens[queen.id - 1].col++);
+        break;
+      }
+    }
+  }
+  
+  }
+  //end base case============
+  if (queen.id == queens.length - 1){
+    // move itself 1 spot forward
+    recurse(queen, queen.row, queen.col++);
+  }
 
  }; 
   // base cases that have more conditions
