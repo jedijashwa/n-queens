@@ -181,8 +181,19 @@ window.countNQueensSolutions = function(n) {
   if (n === 0){
     return 1;
   }
+  
+  var startTime = Date.now();
+  
   var solutionCount = findQueensBoards(n).length;
-
-  console.log('Number of solutions for ' + n + ' queens:', solutionCount);
+  
+  // added to log how long it takes to calculate
+  var solutionTime = (Date.now() - startTime) * 0.001;
+  var solutionTimeString = ' ';
+  if (solutionTime/60 > 1) {
+    solutionTimeString += Math.floor(solutionTime/60) + ' minutes ';
+  }
+  solutionTimeString += Math.round((solutionTime%60)*1000)/1000 + ' seconds';
+  
+  console.log('Number of solutions for ' + n + ' queens:', solutionCount + ' (Calculated in ' + solutionTimeString + ')');
   return solutionCount;
 };
